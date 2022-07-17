@@ -13,7 +13,7 @@ const cookieParser = require('cookie-parser');
 //sockets
 const server = require('http').Server(app);
 //var
-const localBet = "http://localhost:4000/";
+const localBet = "https://items-free.herokuapp.com/";
 const axios = require('axios');
 //
 passport.serializeUser(async(user, done) => {
