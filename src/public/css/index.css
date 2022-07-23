@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Orbitron:wght@600&display=swap');
+
+body{
+background: url("../img/img1.jpg");
+background-repeat: inherit;
+font-family: 'Manrope', sans-serif;
+line-height: 1.6; 
+height: 1000px;
+
+}
+.nav-color{
+    font-size: 1.2em;
+}
+span{
+    color:  #ffffff !important;
+}
+
+.navbar {
+    background-color: transparent !important;
+}
+
+.titulo-font{
+   color:  #A3002E;
+}
+.img-fondo{
+    margin-top: 120px;
+    height: 15rem;
+    width: 40%;
+}
+.arcanas-1{
+    width: 80%;
+    left: 50px;
+    height: 37rem;
+}
+
+.animacion{
+    position: relative;
+    width: 70%;
+    animation: turn1 30s linear infinite;
+
+    mix-blend-mode: screen;
+}
+.border-user{
+    border: 2px solid #25193D !important;
+}
+.animacion-2{
+    width: 38%;
+    top: 22%;
+    left: 31%;
+    position: absolute;
+    animation: turn2 28s linear infinite;
+  
+    mix-blend-mode: screen;
+}
+.animacion-3{
+    height: 150px;
+    width: 150px;
+    top: 33%;
+    left: 39%;
+    position: absolute;
+    opacity: 0.6;
+}
+.div-cronometro{
+    background: rgb(210,194,40);
+    background: linear-gradient(0deg, rgba(210,194,40,1) 37%, rgba(239,162,49,1) 69%);
+   
+}
+.span-cronometro{
+    font-size: 2em;
+    color: #452504 !important;
+}
+.span-gem{
+    font-size: 1.2rem;
+    color: #ffffff !important;
+}
+.bg-progress{
+    background:#452504 !important ;
+}
+.div-progres{
+    height: 36px;
+    background: rgb(255,219,74);
+background: linear-gradient(90deg, rgba(255,219,74,1) 15%, rgba(249,180,59,1) 44%, rgba(245,158,50,1) 86%);
+}
+.button-coins{
+    border: 3px solid #F9BE08;
+    background: rgb(255,153,7);
+    background: linear-gradient(0deg, rgba(255,153,7,1) 37%, rgba(255,175,7,1) 69%);
+    cursor: pointer;
+    height: 70px;
+}
+.get-diamons{
+    font-size: 1.2rem;
+}
+@keyframes turn1 {
+    to{
+        transform: rotate(1turn);
+    }
+}
+@keyframes turn2 {
+    to{
+        transform: rotate(-1turn);
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .arcanas-1{
+        width: 70%;
+        margin-top: 60px;
+ 
+        height: 14rem;
+    }
+    .img-fondo{
+        height: 5rem;
+    }
+  }
+  .footer{
+      height: 300px;
+  }
+
+  /* NAVEGCION */ 
+  .nav-focus{
+        position: relative;
+       
+        /* color:#0E83CD; */
+        
+        margin: 0px 15px;
+        color: #ffffff !important;
+        
+    }
+    .nav-focus:after{
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        width: 100%;
+        height: 4px;
+        background-color: #5117c4;
+        content: "";
+        opacity: 0;
+        transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+        transform: translateY(20px);        
+    }
+    .nav-focus:hover:after{
+        opacity:1;
+        transform: translateY(10px)
+    }
