@@ -2,11 +2,16 @@
 
 body{
 background: url("../img/img1.jpg");
-background-repeat: inherit;
+background-repeat: initial;
 font-family: 'Manrope', sans-serif;
 line-height: 1.6; 
-height: 1000px;
 
+
+}
+.bg-imag{
+    background: url("../img/img1.jpg");
+    background-repeat: inherit;
+    height: 300px;
 }
 .nav-color{
     font-size: 1.2em;
@@ -19,23 +24,24 @@ span{
     background-color: transparent !important;
 }
 
+
 .titulo-font{
    color:  #A3002E;
 }
 .img-fondo{
     margin-top: 120px;
-    height: 15rem;
+    height: 25rem;
     width: 40%;
 }
 .arcanas-1{
     width: 80%;
     left: 50px;
-    height: 37rem;
+    height: 42rem;
 }
 
 .animacion{
     position: relative;
-    width: 70%;
+    width: 74%;
     animation: turn1 30s linear infinite;
 
     mix-blend-mode: screen;
@@ -43,9 +49,13 @@ span{
 .border-user{
     border: 2px solid #25193D !important;
 }
+
+.div-1{
+   height: 500px;
+}
 .animacion-2{
     width: 38%;
-    top: 22%;
+    top: 24%;
     left: 31%;
     position: absolute;
     animation: turn2 28s linear infinite;
@@ -55,36 +65,36 @@ span{
 .animacion-3{
     height: 150px;
     width: 150px;
-    top: 33%;
+    top: 34%;
     left: 39%;
     position: absolute;
-    opacity: 0.6;
+   opacity: .5;
 }
 .div-cronometro{
-    background: rgb(210,194,40);
-    background: linear-gradient(0deg, rgba(210,194,40,1) 37%, rgba(239,162,49,1) 69%);
+    background: #0C75A5;
+    background: linear-gradient(0deg, rgba(5 ,154, 209,1) 37%, rgb(12 ,117, 165,1) 69%);
    
 }
 .span-cronometro{
     font-size: 2em;
-    color: #452504 !important;
+    color: #ffffff !important;
 }
 .span-gem{
     font-size: 1.2rem;
     color: #ffffff !important;
 }
 .bg-progress{
-    background:#452504 !important ;
+    background: #ffffff !important ;
 }
 .div-progres{
     height: 36px;
-    background: rgb(255,219,74);
-background: linear-gradient(90deg, rgba(255,219,74,1) 15%, rgba(249,180,59,1) 44%, rgba(245,158,50,1) 86%);
+    background: rgb(10, 95, 134);
+    background: linear-gradient(90deg, rgb(3, 114, 155) 15%, rgb(13, 97, 128) 44%, rgb(3, 83, 112) 86%);
 }
 .button-coins{
-    border: 3px solid #F9BE08;
-    background: rgb(255,153,7);
-    background: linear-gradient(0deg, rgba(255,153,7,1) 37%, rgba(255,175,7,1) 69%);
+    border: 3px solid #0b5d83;
+    background: rgb(10, 95, 134);
+    background: linear-gradient(0deg, rgb(14, 105, 148) 37%, rgb(9, 72, 102) 69%);
     cursor: pointer;
     height: 70px;
 }
@@ -143,3 +153,9 @@ background: linear-gradient(90deg, rgba(255,219,74,1) 15%, rgba(249,180,59,1) 44
         opacity:1;
         transform: translateY(10px)
     }
+   
+    .b-r{
+        
+        height: 500px;
+    }
+    
