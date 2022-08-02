@@ -11,7 +11,7 @@ line-height: 1.6;
 .bg-imag{
     background: url("../img/img1.jpg");
     background-repeat: inherit;
-    height: 300px;
+    
 }
 .nav-color{
     font-size: 1.2em;
@@ -67,13 +67,15 @@ color:  #A3002E;
     mix-blend-mode: screen;
 }
 .animacion-3{
-    height: 150px;
-    width: 150px;
-    top: 34%;
-    left: 39%;
+    height: 110px;
+    width: 110px;
+    top: 39%;
+    left: 42%;
     position: absolute;
-   opacity: .5;
+    opacity: .8;
 }
+  
+
 .div-cronometro{
     background: #0C75A5;
     background: linear-gradient(0deg, rgba(5 ,154, 209,1) 37%, rgb(12 ,117, 165,1) 69%);
@@ -116,23 +118,13 @@ color:  #A3002E;
     }
 }
 
-@media only screen and (max-width: 540px) {
-    .arcanas-1{
-        width: 70%;
-        margin-top: 60px;
- 
-        height: 14rem;
-    }
-    .img-fondo{
-        height: 5rem;
-    }
-  }
+
   
   .footer{
      
-      border-top: 2px solid #5a3cad;
-      background: #302153;
-      height: 100px;
+      border-top: 3px solid #2f1f58;
+      background: #1a1130;
+    
   }
 
   /* NAVEGCION */ 
@@ -173,3 +165,53 @@ color:  #A3002E;
     .spana-titu{
         font-size: 1.4rem;
     }
+    .img-market{
+        height: 400px;
+    }
+   .img-logo{
+       height: 40px;
+   }
+   .img-logo-footer{
+    height: 25px;
+}
+
+
+    /* //RESPONSE  */
+    @media only screen and (max-width: 540px) {
+        
+        .arcanas-1{
+            width: 70%;
+            margin-top: 60px;
+     
+            height: 19rem;
+        }
+        .img-fondo{
+            height: 5rem;
+        }
+        .b-r{
+        
+            height: 230px;
+        }
+       
+        .dvi-response {
+            height: 650px; 
+        }
+        .div-contenedor-2{
+            visibility: hidden;
+        }
+        .spana-titu{
+            font-size: calc(1rem + 1vw);
+        }
+       .titulo-font {
+        font-size: calc(1.7rem + 1.7vw);
+       }
+      .span-cronometro{
+        font-size: calc(1rem + 1vw);
+      }
+      .img-market{
+        height: 150px;
+    }
+    .img-logo{
+        height: 30px;
+    }
+      }

@@ -8,7 +8,7 @@
 </head>
 <body>
     <%- include('nav.ejs'); -%>
-    <div class="row ml-1 mr-1 mt-3 mb-4 div-1" >
+    <div class="row ml-1 mr-1 mt-4 dvi-response mb-4 div-1" >
         <div class="col-md-6 col-sm-12  text-center  text-danger mt-4">
             <span class="spana-titu">Cansado de no tener items en Dota 2 ... !!</span>
         </br>
@@ -23,8 +23,8 @@
                        <div class="col-md-6">
                            <img src="/img/gem.png" alt="" style="height: 25px;"> <span class="span-gem">+1</span> 
                        </div>
-                       <div class="col-md-6">
-                        <i class="fas fa-stopwatch" style="font-size:20px;"></i><span class="span-gem"> 00:59:99</span> 
+                       <div class="col-md-6 col-sm-5">
+                        <i class="fas fa-stopwatch" style="font-size:20px;"></i><span class="span-gem"> 00:10:00</span> 
                        </div>
                        <div class="col-md-10 text-center div-progres  mb-2 rounded">
                         <div class="progress mt-2">
@@ -37,7 +37,7 @@
                             </div>
                           </div>
                        </div>
-                       <button class="col-md-11 button-coins mb-2 text-center" id="coins" >
+                       <button class="col-md-11 col-sm-5 button-coins mb-2 text-center" id="coins" >
                         <img src="/img/gem.png" alt="" style="height: 25px;"> <span class="span-gem">+1</span>
                         <br>
                         <span class="get-diamons">Get your free diamonds</span>
@@ -46,11 +46,11 @@
                </div>
            </div>
         </div>
-        <div class="col-md-6 col-sm-12  text-center fondo-anim">
+        <div class="col-md-6 col-sm-12 div-contenedor-2 text-center fondo-anim">
             <div class="fondo-estatico">
                 <img src="/img/arcana-2.png" class="img-fluid animacion " alt="">
                 <img src="/img/arcana-3.png" class="img-fluid animacion-2 " alt="">
-                <img src="/img/toxic.png" class="img-fluid animacion-3 " alt="">
+                <img src="/img/triangle2.png" class="img-fluid animacion-3 " alt="">
 
             </div>
            
@@ -68,24 +68,29 @@
         </div>
     </div>
                                                
-    <div class="col-md-12 col-sm-12  bg-imag b-r3">
+    <div class="col-md-12 col-sm-12  bg-imag ">
         <div class="row mt-4">
            
-            <div class="col-6 div-market text-center text-light">
+            <div class="col-md-6 col-sm-12 div-market text-center text-light">
                 <img src="/img/treasure.png" class="img-fluid mt-4" style="height: 100px;" class="" alt="">
                 <h2 class="titulo-font2 mt-4">MARKET PLACE </h2>
                 <p class="spana-titu">Reclama tesoros cada tesoro obtendra recompensas segun tu nivel, con los diamantes puedes comprar en el mercado items, level, tesoros, boletos y mas .....</p>
             </div>
-            <div class="col-6 div-market text-center">
-                <img src="/img/market.png" class="img-fluid" style="height: 400px;" alt="" >
+            <div class="col-md-6 col-sm-11 div-market text-center mb-2 ">
+                <img src="/img/market.png" class="img-fluid img-market"    alt="" >
             </div>
         </div>
         
     </div>  
   
-    <div class=" col-md-12 footer">
-        1
-    </div>
+    <footer class="text-white text-center footer">
+     
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <img src="/img/logo.png"   class=" img-logo-footer" alt="">
+        </div>
+        <!-- Copyright -->
+      </footer>
     <%- include('scripts.ejs'); -%>
 </body>
 
