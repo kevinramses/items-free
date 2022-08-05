@@ -174,6 +174,46 @@ color:  #A3002E;
    .img-logo-footer{
     height: 25px;
 }
+.div-publi{
+    height: 500px;
+}
+.div-publi2{
+    height: 200px;
+}
+.img-market{
+    height: 200px;
+}
+
+.bg-market{
+    background: rgba(50, 37, 80, 0.7);
+   
+}
+.span-market{
+    font-size: 20px;
+}
+.btn-market{
+    border: 3px solid #0b5d83;
+    background: rgb(10, 95, 134);
+    background: linear-gradient(0deg, rgb(14, 105, 148) 37%, rgb(9, 72, 102) 69%);
+}
+.btn-market:hover{
+    border: 3px solid #084a69;
+    background: rgb(11, 128, 182);
+    background: linear-gradient(0deg, rgb(17, 132, 185) 37%, rgb(12, 101, 143) 69%);
+}
+
+.button-coins:hover{
+    border: 3px solid #0f5372;
+    background: rgb(11, 115, 163);
+    background: linear-gradient(0deg, rgb(15, 119, 167) 37%, rgb(11, 91, 128) 69%);
+}
+.border-market{
+    border-top: 3px solid #08061B;
+}
+.border-mar{
+    border: 2px solid #5e3cad;
+}
+
 
 
     /* //RESPONSE  */

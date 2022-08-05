@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('header.ejs'); -%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('nav.ejs'); -%>
+
+    <div class="row ml-1 mr-1 mb-4 mt-4 justify-content-center text-center">
+      
+      <div class="col-sm-12 col-md-12 col-lg-3 ">
+        <div class="card  mb-3 bg-market border-mar" style="max-width: 18rem;">
+          <div class="card-header "><img src="/img/ticket3.png" class="img-fluid img-market" alt="">
+            <h4 class="card-title text-primary  ">TICKET </h4> 
+          </div>
+          <div class="card-body text-light border-market">
+             <div class="text-left">
+              <span class="span-market">Costo: <strong class="text-danger ml-2"> <img src="/img/gem.png" alt="" style="width: 25px;" class="img-fluid rounded mx-auto  "> <span class="mt-1 text-danger">1</span> </strong>  </span>
+              <a type="button" class="ml-2 text-primary" data-toggle="collapse" data-target="#demo"><i class="far fa-question-circle"></i></a>
+            </div>
+            
+            <div id="demo" class="collapse">
+              Costo de una gema por un ticket, participa en el sorteo semanal con los tickets recolectados
+            </div>
+            <button class="btn btn-market mt-4 text-light  btn-comprar" id="1"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-12 col-lg-3 ">
+        <div class="card  mb-3 bg-market border-mar" style="max-width: 18rem;">
+          <div class="card-header ">  <img src="/img/xp.png" class="img-fluid img-market" alt="">
+            <h4 class="card-title text-primary  ">Experiencia </h4> 
+          </div>
+          <div class="card-body text-light border-market">
+             <div class="text-left">
+              <span class="span-market">Costo: <strong class="text-danger ml-2"> <img src="/img/gem.png" alt="" style="width: 25px;" class="img-fluid rounded mx-auto  "> <span class="mt-1 text-danger">2</span> </strong>  </span>
+              <a type="button" class="ml-2 text-primary" data-toggle="collapse" data-target="#demo2"><i class="far fa-question-circle"></i></a>
+            </div>
+            
+            <div id="demo2" class="collapse">
+              Compra uno de experiencia para ir subiendo de nivel y poder recolectar más cofres
+            </div>
+            <button class="btn btn-market mt-4 text-light btn-comprar" id="2"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+        </div>
+     
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3 ">
+        <div class="card  mb-3 bg-market border-mar" style="max-width: 18rem;">
+          <div class="card-header "> <img src="/img/tesoro.png" class="img-fluid img-market" alt="">
+            <h4 class="card-title text-primary  ">Tesoro #1</h4> 
+          </div>
+          <div class="card-body text-light border-market">
+             <div class="text-left">
+              <span class="span-market">Costo: <strong class="text-danger ml-2"> <img src="/img/gem.png" alt="" style="width: 25px;" class="img-fluid rounded mx-auto  "> <span class="mt-1 text-danger">30</span> </strong>  </span>
+              <a type="button" class="ml-2 text-primary" data-toggle="collapse" data-target="#demo3"><i class="far fa-question-circle"></i></a>
+            </div>
+            
+            <div id="demo3" class="collapse">
+              Tesoro #1 puede contener articulos comunes, poco comunes, inmortales, anunciadores, packs
+            </div>
+            <button class="btn btn-market mt-4 text-light  btn-comprar" id="3"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="col-sm-12 col-md-12 col-lg-3 ">
+        <div class="card  mb-3 bg-market border-mar" style="max-width: 18rem;">
+          <div class="card-header "> <img src="/img/item1.png" class="img-fluid img-market" alt="">
+            <h4 class="card-title text-primary  ">Immortal #1</h4> 
+          </div>
+          <div class="card-body text-light border-market">
+             <div class="text-left">
+              <span class="span-market">Costo: <strong class="text-danger ml-2"> <img src="/img/gem.png" alt="" style="width: 25px;" class="img-fluid rounded mx-auto  "> <span class="mt-1 text-danger">40</span> </strong>  </span>
+              <a type="button" class="ml-2 text-primary" data-toggle="collapse" data-target="#demo4"><i class="far fa-question-circle"></i></a>
+            </div>
+            
+            <div id="demo4" class="collapse">
+              Immortal #1 compra este item puedes retirarlo inmediatamente a tu cuenta de steam
+            </div>
+            <button class="btn btn-market mt-4 text-light btn-comprar" id="4"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+        </div>
+      </div>
+     
+      <div class="col-sm-12 col-md-12 col-lg-3 ">
+        <div class="card  mb-3 bg-market border-mar" style="max-width: 18rem;">
+          <div class="card-header "> <img src="/img/tesoro2.png" class="img-fluid img-market" alt="">
+            <h4 class="card-title text-primary  ">Tesoro #2</h4> 
+          </div>
+          <div class="card-body text-light border-market">
+             <div class="text-left">
+              <span class="span-market">Costo: <strong class="text-danger ml-2"> <img src="/img/gem.png" alt="" style="width: 25px;" class="img-fluid rounded mx-auto  "> <span class="mt-1 text-danger">40</span> </strong>  </span>
+              <a type="button" class="ml-2 text-primary" data-toggle="collapse" data-target="#demo5"><i class="far fa-question-circle"></i></a>
+            </div>
+            
+            <div id="demo5" class="collapse">
+              Tesoro #2 tiene un 100% de contener un item immortal aleatorio
+            </div>
+            <button class="btn btn-market mt-4 text-light btn-comprar" id="5"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <footer class="text-white text-center footer">
+     
+     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+       © 2022 Copyright:
+       <img src="/img/logo.png"   class=" img-logo-footer" alt="">
+     </div>
+     <!-- Copyright -->
+   </footer>
+ <%- include('scripts.ejs'); -%>
+ <script>
+   $( document ).ready(function() {
+    $(".btn-comprar").click(function () {
+       alert($(this).attr("id"));
+     });
+});
+ </script>
+</body>
+
+</html>

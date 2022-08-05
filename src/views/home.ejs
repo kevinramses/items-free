@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('header.ejs'); -%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('nav.ejs'); -%>  
+    
+    <div class="row justify-content-center mt-4 ml-1 mr-1 mb-4">
+        <div class="col-md-12 text-light text-center mb-3 border border-primary">
+            Publicidad #1
+        </div>
+        <div class="col-md-12 row justify-content-between ">
+            <div class="col-md-2  border border-primary div-publi">Publicidad #2</div>
+            
+            <div class="col-md-6 ">
+                <div class="col-sm-8 col-md-12 mt-4 mb-4 rounded  div-cronometro text-center">
+                    <span class="span-cronometro">Free diamonds every hour..!</span>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <img src="/img/gem.png" alt="" style="height: 25px;"> <span class="span-gem">+1</span> 
+                        </div>
+                        <div class="col-md-6 col-sm-5 text-danger">
+                         <i class="fas fa-stopwatch" style="font-size:20px;"></i><span class="span-gem"> 00:10:00</span> 
+                        </div>
+                        <div class="col-md-10 text-center div-progres  mb-2 rounded">
+                         <div class="progress mt-2">
+                             <div class="progress-bar progress-bar-striped active bg-danger" role="progressbar"
+                             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                               40%
+                             </div>
+                             <div class="progress-bar progress-bar-striped bg-progress" role="progressbar" style="width:60%">
+                                
+                             </div>
+                           </div>
+                        </div>
+                        <button class="col-md-11 col-sm-5 btn button-coins mb-2 text-center" id="coins" >
+                         <img src="/img/gem.png" alt="" style="height: 25px;"> <span class="span-gem">+1</span>
+                         <br>
+                         <span class="get-diamons">Get your free diamonds</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-md-12 row justify-content-around mt-4">
+                    <div class="col-md-5 border border-primary mt-4 div-publi2 ">Publicidad #5</div>
+                    <div class="col-md-5 border border-primary mt-4 div-publi2">Publicidad #6</div>
+                </div>
+             
+            </div>
+            <div class="col-md-2  border border-primary">Publicidad #3 </div>
+        </div>
+       
+    </div>
+    
+    
+    
+    
+    <footer class="text-white text-center footer">
+     
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <img src="/img/logo.png"   class=" img-logo-footer" alt="">
+        </div>
+        <!-- Copyright -->
+      </footer>
+    <%- include('scripts.ejs'); -%>
+</body>
+
+</html>
