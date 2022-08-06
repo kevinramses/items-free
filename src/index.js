@@ -12,20 +12,38 @@ const SteamStrategy = require('passport-steam').Strategy;
 const cookieParser = require('cookie-parser');
 //sockets
 const server = require('http').Server(app);
+// database
+const pool = require('./config/database');
+require("dotenv").config()
 //var
-const localBet = "https://items-free.herokuapp.com/";
+const localBet = process.env.LOCAL;
 const axios = require('axios');
+const { database } = require('./config/keys');
+
 //
 passport.serializeUser(async(user, done) => {
-    try {  const {data} = await axios.post('http://localhost:4001/saldo',{  id:user._json.steamid,profile:user._json.personaname})
-           user._json.saldo=data.saldo;
-		   user._json.nombre=data.nombre;
-		   user._json.promo=data.promo;
+	
+    try { 
+		var result = await pool.query("SELECT * FROM usuario WHERE id =" + user._json.steamid + " LIMIT 1 ");
+		if (result=="") {
+			pool.query("INSERT INTO usuario (id, nombre, saldo, ip) VALUES ('"+user._json.steamid+"','"+user._json.personaname+"','0','172.25.25.23')" ,(err, result) => {
+				if (err) {
+					console.log("error");
+				}
+			})
+			user._json.saldo=result[0].saldo ;
+		}else{
+			
+			user._json.saldo=result[0].saldo ;
+		}        
+		//    user._json.nombre=data.nombre;
+		//    user._json.promo=data.promo;
     } catch (error) {
-        user._json.saldo="0"; 
+		user._json.saldo="0"; 
+		console.log(error)
     }
     
-    done(null, user._json);
+	done(null, user._json);
     
     // console.log(data)
 	// done(null, user._json);
@@ -37,7 +55,7 @@ passport.deserializeUser((obj, done) => {
 
 passport.use(new SteamStrategy({
 	returnURL: localBet+'auth/steam/return'
-	, realm: localBet, apiKey: "0D54C1C4829E0E28B063C310B8E8DC4E"
+	, realm: localBet, apiKey: process.env.KEY
 
 }, (identifier, profile, done) => {
 	return done(null, profile);
