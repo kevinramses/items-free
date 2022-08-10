@@ -23,8 +23,9 @@
                         <div class="col-md-6">
                             <img src="/img/gem.png" alt="" style="height: 25px;"> <span class="span-gem">+1</span> 
                         </div>
-                        <div class="col-md-6 col-sm-5 text-danger">
-                         <i class="fas fa-stopwatch" style="font-size:20px;"></i><span class="span-gem"> 00:10:00</span> 
+                        <div class="col-md-6 col-sm-5 " id="crono">
+                        
+                        
                         </div>
                         <div class="col-md-10 text-center div-progres  mb-2 rounded">
                          <div class="progress mt-2">
@@ -68,6 +69,73 @@
         <!-- Copyright -->
       </footer>
     <%- include('scripts.ejs'); -%>
+    <script>
+     $( document ).ready(function() {  
+   
+        $("#coins").click(function () {
+            $.ajax({
+                url: '/recolectar',
+                method: 'POST',
+                data: {
+                    id:"usuario"
+                },
+                success: function (response) {
+                
+                    Swal.fire({
+                        icon: response.succes,
+                        title: response.estado,
+                        background: "url('../img/alerta.jpg')",
+
+                        showConfirmButton: true,
+                        customClass: {
+                            title: "text-light"
+                        }
+                    })
+                }
+            })
+          
+        })
+   
+   
+        const getRemainTime = deadline => {
+        let now = new Date();
+        tiempo = (new Date(deadline) - now + 1000) / 1000;
+
+        segundo = ('0' + Math.floor(tiempo % 60)).slice(-2);
+        minutos = ('0' + Math.floor(tiempo / 60 % 60)).slice(-2);
+        horas = ('0' + Math.floor(tiempo / 3600 % 24)).slice(-2);
+        dias = Math.floor(tiempo / (3600 * 24));
+        return { tiempo, segundo, minutos, horas, dias }
+
+    }
+    
+
+        const countdown = (deadline, elem) => {
+        const fecha = new Date();
+        const regresivo = fecha.setMinutes(fecha.getMinutes() + 1);
+        const ele = document.getElementById(elem);
+
+        const timerUpdate = setInterval(() => {
+            let t = getRemainTime(deadline);
+
+            ele.innerHTML = `
+          <i class="fas fa-stopwatch text-danger" style="font-size:20px;"></i>   <span class="span-cronometro2">${t.minutos}m : ${t.segundo}s  </span>
+
+              `
+            if (t.tiempo <= 1) {
+                clearInterval(timerUpdate)
+                ele.innerHTML = `
+              <span class="span-cronometro2 badge badge-success border border-secondary mb-1 ">Recolecta </span>`;
+
+            }
+
+        }, 1000)
+    }
+
+    countdown(parseFloat("<%= time%>"), "crono")
+});
+</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

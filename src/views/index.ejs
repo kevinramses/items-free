@@ -13,18 +13,19 @@
             <span class="spana-titu">Cansado de no tener items en Dota 2 ... !!</span>
         </br>
            <h1 class="titulo-font ">FREE ITEMS DOTA 2</h1>
-           <span class="spana-titu">Reclama tesoros cada  15 minutos obten diamantes con los diamantes compra itesm retira a tu cuenta de steam</span>
+           <span class="spana-titu">Reclama tesoros cada  15 minutos obtén diamantes con los diamantes compra items retira a tu cuenta de steam inmediatamente</span>
 
       
            <div class="row justify-content-center mt-4">
                <div class="col-sm-8 col-md-10 rounded  div-cronometro text-center">
                    <span class="span-cronometro">Free diamonds every hour..!</span>
-                   <div class="row justify-content-center">
+                   <div class="row justify-content-center mt-1">
                        <div class="col-md-6">
                            <img src="/img/gem.png" alt="" style="height: 25px;"> <span class="span-gem">+1</span> 
                        </div>
-                       <div class="col-md-6 col-sm-5">
-                        <i class="fas fa-stopwatch" style="font-size:20px;"></i><span class="span-gem"> 00:10:00</span> 
+                       <div class="col-md-6 col-sm-5 " id="crono">
+                        
+                        
                        </div>
                        <div class="col-md-10 text-center div-progres  mb-2 rounded">
                         <div class="progress mt-2">
@@ -82,6 +83,7 @@
         </div>
         
     </div>  
+    
   
     <footer class="text-white text-center footer">
      
@@ -92,6 +94,64 @@
         <!-- Copyright -->
       </footer>
     <%- include('scripts.ejs'); -%>
+
+    <script>
+
+$( document ).ready(function() {
+
+    $("#coins").click(function () {
+
+        Swal.fire({
+            icon: "error",
+            title: "Inicia sesión",
+            background: "#503D75",
+
+            showConfirmButton: true,
+            customClass: {
+                title: "text-light"
+            }
+        })
+    })
+  
+          const getRemainTime = deadline=>{
+        let now = new Date();
+        tiempo = (new Date(deadline)-now+1000)/1000;
+        
+         segundo = ('0'+Math.floor(tiempo  % 60 )).slice(-2);
+	     minutos =('0'+Math.floor(tiempo / 60 % 60 )).slice(-2);
+		 horas = ('0'+Math.floor(tiempo / 3600 % 24 )).slice(-2);
+         dias = Math.floor(tiempo/(3600*24));
+         return{tiempo,segundo,minutos,horas,dias}
+
+    }
+  
+   
+   
+         const countdown  = (deadline,elem)=>{
+            const fecha = new Date();
+            const regresivo= fecha.setMinutes(fecha.getMinutes() + 10);
+             const ele = document.getElementById(elem);
+
+             const timerUpdate = setInterval(()=>{
+                 let t = getRemainTime(regresivo);
+
+                ele.innerHTML = `
+                <i class="fas fa-stopwatch" style="font-size:20px;"></i>   <span class="span-cronometro2">${t.minutos}m : ${t.segundo}s  </span>
+
+                    `
+                if (t.tiempo <= 1) {
+                    clearInterval(timerUpdate)
+                    ele.innerHTML = `<span class="span-cronometro2 badge badge-success border border-secondary mb-1">Recolecta </span>`;
+                    
+                }
+
+             },1000)
+         }
+
+         countdown("3000","crono")
+});
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

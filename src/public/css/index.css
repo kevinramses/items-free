@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Orbitron:wght@600&display=swap');
 
 body{
-background: url("../img/img1.jpg");
+background: url('../img/img1.jpg');
 background-repeat: initial;
 
 line-height: 1.6; 
@@ -83,6 +83,10 @@ color:  #A3002E;
 }
 .span-cronometro{
     font-size: 2em;
+    color: #ffffff !important;
+}
+.span-cronometro2{
+    font-size: 1.2em;
     color: #ffffff !important;
 }
 .span-gem{

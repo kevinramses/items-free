@@ -24,14 +24,24 @@ const { database } = require('./config/keys');
 passport.serializeUser(async(user, done) => {
 	
     try { 
+		const fecha = new Date();
+		const regresivo = fecha.setMinutes(fecha.getMinutes() - 15) ;
+
 		var result = await pool.query("SELECT * FROM usuario WHERE id =" + user._json.steamid + " LIMIT 1 ");
 		if (result=="") {
-			pool.query("INSERT INTO usuario (id, nombre, saldo, ip) VALUES ('"+user._json.steamid+"','"+user._json.personaname+"','0','172.25.25.23')" ,(err, result) => {
+			pool.query("INSERT INTO usuario (id, nombre, saldo, level, time, ip) VALUES ('"+user._json.steamid+"','"+user._json.personaname+"',0,1,"+regresivo+",'172.25.25.23')" ,(err, result) => {
 				if (err) {
-					console.log("error");
+					console.log(err);  
+				}else{
+					pool.query("INSERT INTO inventario (steamid) VALUES ('"+user._json.steamid+"')" ,(err, result) => {
+						if (err) {
+							console.log(err);  
+						}
+					})
 				}
-			})
-			user._json.saldo=result[0].saldo ;
+				
+			}) 
+			user._json.saldo="0" ;
 		}else{
 			
 			user._json.saldo=result[0].saldo ;
@@ -100,6 +110,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(morgan('dev'));
 app.use(require('./routes'));
+app.use(require('./routes/peticiones'));
 
 
 server.listen(app.get('port'), function() {
