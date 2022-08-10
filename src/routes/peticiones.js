@@ -25,7 +25,7 @@ router.post('/recolectar', async  (req, res) => {
             
                 await pool.query("UPDATE usuario Set time=? WHERE id=?", [regresivo, usuario], (err, resultado) => {
                     if (err) {
-                        res.json({ estado: "erro con el servidor", succes: "error" });
+                        res.json({ estado: "erro con el servidor1", succes: "error" });
                     } else {
                         var diamante =result[0].diamantes + level;
                         var ticket =result[0].ticket + level;
@@ -52,7 +52,7 @@ router.post('/recolectar', async  (req, res) => {
         }
     } catch (error) {
         console.log(error)
-        res.json({ estado: "erro con el servidor", succes: "error" });
+        res.json({ estado: "erro con el servidor2", succes: "error" });
     }
   });
 module.exports = router;
