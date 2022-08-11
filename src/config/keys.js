@@ -3,8 +3,9 @@ module.exports = {
     database:{
         host:  process.env.HOST,
         user:  process.env.USER,
-        password: '',
-        database:  process.env.DATABASE 
+        password: process.env.PASSWORD, 
+        database:  process.env.DATABASE ,
+        ssl: true
     }
     // database:{
     //     host: 'localhost',

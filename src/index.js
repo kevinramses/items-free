@@ -33,14 +33,15 @@ passport.serializeUser(async(user, done) => {
 				if (err) {
 					console.log(err);  
 				}else{
-					pool.query("INSERT INTO inventario (steamid) VALUES ('"+user._json.steamid+"')" ,(err, result) => {
-						if (err) {
-							console.log(err);  
-						}
-					})
+				
 				}
 				
 			}) 
+			pool.query("INSERT INTO inventario (`steamid`, `ticket`, `diamantes`, `xp`, `tesoro1`, `tesoro2`, `tesoro3`, `tesoro4`, `tesoro5`, `tesoro6`) VALUES ('"+user._json.steamid+"',0,0,0,0,0,0,0,0,0)" ,(err, result) => {
+				if (err) {
+					console.log(err);  
+				}
+			})
 			user._json.saldo="0" ;
 		}else{
 			
