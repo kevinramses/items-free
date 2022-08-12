@@ -53,6 +53,9 @@ color:  #A3002E;
 .border-user{
     border: 2px solid #25193D !important;
 }
+.border-user{
+    border: 2px solid #765caa !important;
+}
 
 .div-1{
    height: 500px;
@@ -192,6 +195,16 @@ color:  #A3002E;
     background: rgba(50, 37, 80, 0.7);
    
 }
+.bg-market2{
+    background: rgba(15 ,10 ,42, 0.9);
+   
+}
+.border-mar2{
+    border: 2px solid rgba(57, 45, 126, 0.9);
+}
+.border-tab{
+    border-bottom: 2px solid rgba(57, 45, 126, 0.9);
+}
 .span-market{
     font-size: 20px;
 }
@@ -205,6 +218,10 @@ color:  #A3002E;
     background: rgb(11, 128, 182);
     background: linear-gradient(0deg, rgb(17, 132, 185) 37%, rgb(12, 101, 143) 69%);
 }
+.button-coins:disabled,
+.button-coins[disabled]{
+   cursor: no-drop;
+}
 
 .button-coins:hover{
     border: 3px solid #0f5372;
@@ -217,8 +234,82 @@ color:  #A3002E;
 .border-mar{
     border: 2px solid #5e3cad;
 }
+.div-inve{
+    height: 520px;
+}
+.nav-tabs .nav-item .nav-link {
+    background-color: #0080FF;
+    color: #FFF;
+  }
+  
+  .nav-tabs .nav-item .nav-link.active {
+    color: #FFF;
+  }
+  
+  .tab-content {
+   
+    border-top: transparent;
+    padding: 15px;
+  }
+  
+  .tab-content .tab-pane {
+    color: #0080FF;
+    height: 400px;
+    overflow-y: scroll;
+  }
+  .nav-link2{
+    border: 1px solid #084a69 ;
+    background: rgb(11, 128, 182);
+    background: linear-gradient(0deg, rgb(17, 132, 185) 37%, rgb(12, 101, 143) 69%);
+  }
+  .nav-link2:hover{
+    border: 1px solid #59afd6 !important;
 
+  }
+  .div-items{
+      height: 250px;
+  }
 
+ 
+ 
+  /*  scrool */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #7245da;
+    border: 4px none #ffffff;
+    border-radius: 50px;
+    
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7245da;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #7245da;
+  }
+  ::-webkit-scrollbar-track {
+    background: #362955;
+    border: 4px none #ffffff;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #362955;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #362955;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  
+  
 
     /* //RESPONSE  */
     @media only screen and (max-width: 540px) {
@@ -229,6 +320,14 @@ color:  #A3002E;
      
             height: 19rem;
         }
+        .nav-link2{
+            width: 100%;
+            font-size: calc(.5rem + .5vw);
+        }
+        .tab-content .tab-pane {
+            height: 340px;
+            overflow-y: scroll;
+          }
         .img-fondo{
             height: 5rem;
         }

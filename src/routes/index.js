@@ -12,11 +12,15 @@ router.get('/', async (req, res) => {
 			saldo:user.saldo
 		});
 	}else{
-		res.render ('index'  ,  {
-			user:  user,
-			saldo: user.saldo
-		});
-		
+		const result = await peticionUser(user);
+		const {level,time}=result;
+	
+			res.render ('home'  ,  { 
+				user:  user, 
+				saldo: user.saldo,
+				level:level,
+				time:time
+			})
 	}
 	
 });
@@ -25,7 +29,8 @@ router.get('/home', async (req, res) => {
 	var user = req.user ||"";
 	const result = await peticionUser(user);
 	const {level,time}=result;
-		res.render ('home'  ,  {
+
+		res.render ('home'  ,  { 
 			user:  user, 
 			saldo: user.saldo,
 			level:level,
@@ -42,6 +47,15 @@ router.get('/market', async (req, res) => {
 		});
 	
 });
+router.get('/inventario', async (req, res) => {
+	var user = req.user ||"";
+		res.render ('inventario'  ,  {
+			user: user, 
+			saldo: user.saldo
+		});
+	
+});
+
 
 
 module.exports = router;

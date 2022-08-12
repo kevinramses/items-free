@@ -12,6 +12,7 @@ router.post('/recolectar', async  (req, res) => {
         } else {
             var usuario = user.steamid
             const fecha = new Date();
+
             var minutos = parseFloat(process.env.TIME) ;
             const resultFecha = fecha.setMinutes(fecha.getMinutes());
             const regresivo = fecha.setMinutes(fecha.getMinutes() + minutos);

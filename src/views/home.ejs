@@ -38,7 +38,7 @@
                              </div>
                            </div>
                         </div>
-                        <button class="col-md-11 col-sm-5 btn button-coins mb-2 text-center" id="coins" >
+                        <button class="col-md-11 col-sm-5 btn button-coins mb-2 text-center" id="coins" disabled >
                          <img src="/img/gem.png" alt="" style="height: 25px;"> <span class="span-gem">+1</span>
                          <br>
                          <span class="get-diamons">Get your free diamonds</span>
@@ -71,32 +71,37 @@
     <%- include('scripts.ejs'); -%>
     <script>
      $( document ).ready(function() {  
-   
+      
+
         $("#coins").click(function () {
+            
             $.ajax({
                 url: '/recolectar',
                 method: 'POST',
                 data: {
-                    id:"usuario"
+                    id: "usuario"
                 },
                 success: function (response) {
-                
+
                     Swal.fire({
                         icon: response.succes,
                         title: response.estado,
                         background: "url('../img/alerta.jpg')",
-
-                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: '#7066E0',
+                        confirmButtonText: '¡Ok!',
                         customClass: {
                             title: "text-light"
                         }
-                    })
+                    }).then((result) => {
+                        if (result.value) {
+                            location.reload();
+                        }
+                    });
                 }
             })
-          
         })
-   
-   
+            
         const getRemainTime = deadline => {
         let now = new Date();
         tiempo = (new Date(deadline) - now + 1000) / 1000;
@@ -122,16 +127,18 @@
           <i class="fas fa-stopwatch text-danger" style="font-size:20px;"></i>   <span class="span-cronometro2">${t.minutos}m : ${t.segundo}s  </span>
 
               `
+              $("#coins").attr('disabled', true);
             if (t.tiempo <= 1) {
                 clearInterval(timerUpdate)
                 ele.innerHTML = `
               <span class="span-cronometro2 badge badge-success border border-secondary mb-1 ">Recolecta </span>`;
-
+              $("#coins").attr('disabled', false);
             }
 
         }, 1000)
     }
 
+  
     countdown(parseFloat("<%= time%>"), "crono")
 });
 </script>
