@@ -43,14 +43,17 @@ passport.serializeUser(async(user, done) => {
 				}
 			})
 			user._json.saldo="0" ;
+			user._json.level="1" ;
 		}else{
 			
 			user._json.saldo=result[0].saldo ;
+			user._json.level=result[0].level ;
 		}        
 		//    user._json.nombre=data.nombre;
 		//    user._json.promo=data.promo;
     } catch (error) {
 		user._json.saldo="0"; 
+		user._json.level="1" ;
 		console.log(error)
     }
     

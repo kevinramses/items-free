@@ -27,13 +27,195 @@
             
                 <div class="tab-content bg-market2 border-mar2 " id="myTabContent">
                   <div class="tab-pane fade show active m-2 " id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="row justify-content-between ml-1 mr-1">
-                        <div class="col-md-3 col-sm-12 div-items mr-2 mb-4 bg-market border-mar" >1</div>
-                        <div class="col-md-3 div-items mr-2 mb-4 bg-market border-mar">2</div>
-                        <div class="col-md-3 div-items mr-2 mb-4 bg-market border-mar">3</div>
-                        <div class="col-md-3 div-items mr-2 mb-4 bg-market border-mar" >1</div>
-                        <div class="col-md-3 div-items mr-2 mb-4 bg-market border-mar">2</div>
-                        <div class="col-md-3 div-items mr-2 mb-4 bg-market border-mar">3</div>
+                    <div class="row justify-content-start ml-1 mr-1 mr-1 text-center">
+                      <div class="col-md-3 div-items mr-lg-4 ml-lg-4 mb-4 bg-market border-mar">
+                        <% if(diamantes > 0){ %>
+                          <img src="/img/cofre.png" class="img-fluid img-inventario mt-3" alt="">
+                            <h6 class="card-title text-light h5-inventario">COFRES  </h6>
+                            <button class="btn btn-market mt-1 text-light  btn-comprar btn-size" id="diamantes">
+                               Abrir <strong class="strong-inve">1/<%= diamantes%></strong>
+                            </button>
+                            <% }else{%>
+                              <div class="container" >
+                                <div class="row align-items-center row-inventario" >
+                                  <div class="col">
+                                    <h4><i class="fas fa-bug text-light"></i></h4>
+                                    <h5 class="h4-inventario text-light">No tienes Cofres </h5>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                              
+                            <%} %>
+                      </div>
+                      <div class="col-md-3 div-items mr-lg-4 ml-lg-4 mb-4 bg-market border-mar">
+                        <% if(ticket > 0){ %>
+                          <img src="/img/ticket3.png" class="img-fluid img-inventario mt-3" alt="">
+                            <h6 class="card-title text-light h5-inventario">Tickets  </h6>
+                            <button class="btn btn-market mt-1 text-light  btn-comprar btn-size" id="ticket">
+                              Usar <strong class="strong-inve"><%= ticket%>/<%= ticket%></strong>
+                            </button>
+                            <% }else{%>
+                              <div class="container" >
+                                <div class="row align-items-center row-inventario" >
+                                  <div class="col">
+                                    <h4><i class="fas fa-bug text-light"></i></h4>
+                                    <h5 class="h4-inventario text-light">No tienes Tickets</h5>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                              
+                            <%} %>
+                      </div>
+
+                      <div class="col-md-3 div-items mr-lg-4 ml-lg-4 mb-4 bg-market border-mar">
+                        <% if (xp > 0){ %>
+                          <img src="/img/xp.png" class="img-fluid img-inventario mt-3" alt="">
+                            <h6 class="card-title text-light h5-inventario">XP  </h6>
+                            <button class="btn btn-market mt-1 text-light  btn-comprar btn-size" id="xp">
+                              Usar <strong class="strong-inve"><%= xp%>/<%=xp%></strong>
+                            </button>
+                            <% }else{%>
+                              <div class="container" >
+                                <div class="row align-items-center row-inventario" >
+                                  <div class="col">
+                                    <h4><i class="fas fa-bug text-light"></i></h4>
+                                    <h5 class="h4-inventario text-light">No tienes XP</h5>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                              
+                            <%} %>
+                      </div>
+                      
+                          <div class="col-md-3 div-items mr-lg-4 ml-lg-4 mb-4 bg-market border-mar">
+                            <% if(tesoro1 > 0){ %>
+                              <img src="/img/tesoro.png" class="img-fluid img-inventario mt-3" alt="">
+                                <h6 class="card-title text-light h5-inventario">Tesoro #1 </h6>
+                                <button class="btn btn-market mt-1 text-light  btn-comprar btn-size" id="tesoro1">
+                                   Abrir <strong class="strong-inve">1/<%= tesoro1%></strong>
+                                </button>
+                                <% }else{%>
+                                  <div class="container" >
+                                    <div class="row align-items-center row-inventario" >
+                                      <div class="col">
+                                        <h4><i class="fas fa-bug text-light"></i></h4>
+                                        <h5 class="h4-inventario text-light">No tienes Tesoros #1</h5>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                <%} %>
+                          </div>
+
+                          <div class="col-md-3 div-items mr-lg-4 ml-lg-4 mb-4 bg-market border-mar">
+                            <% if(tesoro2 > 0){ %>
+                              <img src="/img/tesoro2.png" class="img-fluid img-inventario mt-3" alt="">
+                                <h6 class="card-title text-light h5-inventario">Tesoro #2</h6>
+                                <button class="btn btn-market mt-1 text-light  btn-comprar btn-size" id="tesoro2">
+                                  Abrir <strong class="strong-inve">1/<%= tesoro2%></strong>
+                                </button>
+                                <% }else{%>
+                                  <div class="container" >
+                                    <div class="row align-items-center row-inventario" >
+                                      <div class="col">
+                                         <h4><i class="fas fa-bug text-light"></i></h4>
+                                        <h5 class="h4-inventario text-light">No tienes Tesoros #2</h5>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                <%} %>
+                          </div>
+
+                          <div class="col-md-3 div-items mr-lg-4 ml-lg-4 mb-4 bg-market border-mar">
+                            <% if(tesoro3 > 0){ %>
+                              <img src="/img/tesoro3.png" class="img-fluid img-inventario mt-3" alt="">
+                                <h6 class="card-title text-light h5-inventario">Tesoro #3</h6>
+                                <button class="btn btn-market mt-1 text-light  btn-comprar btn-size" id="tesoro3">
+                                  Abrir <strong class="strong-inve">1/<%= tesoro3%></strong>
+                                </button>
+                                <% }else{%>
+                                  <div class="container" >
+                                    <div class="row align-items-center row-inventario" >
+                                      <div class="col">
+                                         <h4><i class="fas fa-bug text-light"></i></h4>
+                                        <h5 class="h4-inventario text-light">No tienes Tesoros #3</h5>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                <%} %>
+                          </div>
+
+                          <div class="col-md-3 div-items mr-lg-4 ml-lg-4 mb-4 bg-market border-mar">
+                            <% if(tesoro4 > 0){ %>
+                              <img src="/img/ticket3.png" class="img-fluid img-inventario mt-3" alt="">
+                                <h6 class="card-title text-light h5-inventario">Tesoro #4</h6>
+                                <button class="btn btn-market mt-1 text-light  btn-comprar btn-size" id="1">
+                                  Abrir <strong class="strong-inve">1/<%= tesoro4%></strong>
+                                </button>
+                                <% }else{%>
+                                  <div class="container" >
+                                    <div class="row align-items-center row-inventario" >
+                                      <div class="col">
+                                         <h4><i class="fas fa-bug text-light"></i></h4>
+                                        <h5 class="h4-inventario text-light">No tienes Tesoros #4</h5>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                <%} %>
+                          </div>
+
+                          <div class="col-md-3 div-items mr-lg-4 ml-lg-4 mb-4 bg-market border-mar">
+                            <% if(tesoro5 > 0){ %>
+                              <img src="/img/ticket3.png" class="img-fluid img-inventario mt-3" alt="">
+                                <h6 class="card-title text-light h5-inventario">Tesoro #5</h6>
+                                <button class="btn btn-market mt-1 text-light  btn-comprar btn-size" id="1">
+                                  Abrir <strong class="strong-inve">1/<%= tesoro5%></strong>
+                                </button>
+                                <% }else{%>
+                                  <div class="container" >
+                                    <div class="row align-items-center row-inventario" >
+                                      <div class="col">
+                                        <h4 class="h4-inventario text-light">No tienes Tesoros #5</h4>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                <%} %>
+                          </div>
+                          
+                          <div class="col-md-3 div-items mr-lg-4 ml-lg-4 mb-4 bg-market border-mar">
+                            <% if(tesoro6 > 0){ %>
+                              <img src="/img/ticket3.png" class="img-fluid img-inventario mt-3" alt="">
+                                <h6 class="card-title text-light h5-inventario">Tesoro #6</h6>
+                                <button class="btn btn-market mt-1 text-light  btn-comprar btn-size" id="1">
+                                  Abrir <strong class="strong-inve">1/<%= tesoro6%></strong>
+                                </button>
+                                <% }else{%>
+                                  <div class="container" >
+                                    <div class="row align-items-center row-inventario" >
+                                      <div class="col">
+                                        <h4><i class="fas fa-bug text-light"></i></h4>
+                                        <h5 class="h4-inventario text-light">No tienes Tesoros #6</h5>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                <%} %>
+                          </div>
+  
+
                     </div>
                     
                   </div>
@@ -50,7 +232,7 @@
                 </div>
                 <div class="col-md-12 text-light mt-3">
                     <h3> <%= user.personaname%></h3>
-                    <h5 class="text-primary">Level : 1</h5>
+                    <h5 class="text-primary">Level <%= level%></h5>
                 </div>
                 <div class="col-md-12 mt-4 text-light">
                     <h5>No has agregado URL de trade de Steam</h5>
@@ -76,7 +258,11 @@
     <script>
         $(document).ready(function () {
           
-             
+
+          $(".btn-comprar").click(function () {
+            alert($(this).attr("id"));
+          });
+      
 
           $(`#url`).on('click',async function (e) {
                 e.preventDefault();

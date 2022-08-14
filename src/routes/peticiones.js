@@ -10,7 +10,7 @@ router.post('/recolectar', async  (req, res) => {
         if (user === "") {
             res.json({ estado: "Inicia sesión", succes: "error" });
         } else {
-            var usuario = user.steamid
+            var usuario = user.steamid 
             const fecha = new Date();
 
             var minutos = parseFloat(process.env.TIME) ;

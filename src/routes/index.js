@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../config/database');
 const peticionUser= require('./funciones/peticionUser')
+const inventario = require('./funciones/inventario')
 
 
 router.get('/', async (req, res) => {
@@ -40,20 +41,38 @@ router.get('/home', async (req, res) => {
 
 router.get('/market', async (req, res) => {
 	var user = req.user ||"";
-		
+	
 		res.render ('market'  ,  {
 			user: user, 
-			saldo: user.saldo
+			saldo: user.saldo,
+			
 		});
 	
 });
 router.get('/inventario', async (req, res) => {
 	var user = req.user ||"";
-		res.render ('inventario'  ,  {
-			user: user, 
-			saldo: user.saldo
+	const result = await inventario(user);
+	if(user ===""){
+		res.render('error', {
+			user: user
+		})
+	} else {
+		const { ticket, diamantes, xp, tesoro1, tesoro2, tesoro3, tesoro4, tesoro5, tesoro6 } = result;
+		res.render('inventario', {
+			user: user,
+			saldo: user.saldo,
+			level:user.level,
+			ticket: ticket,
+			diamantes: diamantes,
+			xp: xp,
+			tesoro1: tesoro1,
+			tesoro2: tesoro2,
+			tesoro3: tesoro3,
+			tesoro4: tesoro4,
+			tesoro5: tesoro5,
+			tesoro6: tesoro6
 		});
-	
+	}
 });
 
 
