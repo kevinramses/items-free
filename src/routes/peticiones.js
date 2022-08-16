@@ -78,7 +78,7 @@ router.post('/cofres', async  (req, res) => {
         else{
             setTimeout(function(){
                 res.json({ estado: result,detalle:"diamante", succes: "error" });
-            }, 1500);
+            }, 1000);
            
         }
        

@@ -86,7 +86,8 @@ router.get('/recolectar', async (req, res) => {
 		})
 	} else {
 		const result = await selectRecolectar(user.steamid);
-		const {detalle,img}= result;
+		const {detalle,img,saldo}= result;
+		req.user.saldo = saldo;
 		res.render ('recolectar'  ,  { 
 			user:  user, 
 			saldo: user.saldo,
