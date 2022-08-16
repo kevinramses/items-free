@@ -82,7 +82,7 @@ const sesion =session({
 	, resave: true
 	, saveUninitialized: true
 	, cookie: {
-		maxAge: 86400000
+		maxAge: 864000000
 	}
 })
 app.use(sesion);

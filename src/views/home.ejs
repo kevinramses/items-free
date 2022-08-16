@@ -6,7 +6,7 @@
     <%- include('header.ejs'); -%>
     <title>Document</title>
 </head>
-<body>
+<body class="body">
     <%- include('nav.ejs'); -%>  
     
     <div class="row justify-content-center mt-4 ml-1 mr-1 mb-4">
@@ -69,12 +69,14 @@
         <!-- Copyright -->
       </footer>
     <%- include('scripts.ejs'); -%>
+
     <script>
      $( document ).ready(function() {  
       
 
         $("#coins").click(function () {
-            
+            $('.button-coins').addClass('cursor')
+            $('.body').addClass('cursor')
             $.ajax({
                 url: '/recolectar',
                 method: 'POST',
@@ -82,7 +84,8 @@
                     id: "usuario"
                 },
                 success: function (response) {
-
+                    $('.body').removeClass('cursor')
+                    $('.button-coins').removeClass('cursor')
                     Swal.fire({
                         icon: response.succes,
                         title: response.estado,
@@ -95,11 +98,13 @@
                         }
                     }).then((result) => {
                         if (result.value) {
+
                             location.reload();
                         }
                     });
                 }
             })
+        
         })
             
         const getRemainTime = deadline => {
@@ -141,8 +146,8 @@
   
     countdown(parseFloat("<%= time%>"), "crono")
 });
-</script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

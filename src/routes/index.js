@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../config/database');
 const peticionUser= require('./funciones/peticionUser')
-const inventario = require('./funciones/inventario')
+const inventario = require('./funciones/inventario');
+const selectRecolectar = require('./modelos/selectRecolectar');
+
 
 
 router.get('/', async (req, res) => {
@@ -49,6 +51,7 @@ router.get('/market', async (req, res) => {
 		});
 	
 });
+
 router.get('/inventario', async (req, res) => {
 	var user = req.user ||"";
 	const result = await inventario(user);
@@ -63,7 +66,7 @@ router.get('/inventario', async (req, res) => {
 			saldo: user.saldo,
 			level:user.level,
 			ticket: ticket,
-			diamantes: diamantes,
+			cofres: diamantes,
 			xp: xp,
 			tesoro1: tesoro1,
 			tesoro2: tesoro2,
@@ -74,6 +77,25 @@ router.get('/inventario', async (req, res) => {
 		});
 	}
 });
+
+router.get('/recolectar', async (req, res) => {
+	var user = req.user ||"";
+	if(user ===""){
+		res.render('error', {
+			user: user
+		})
+	} else {
+		const result = await selectRecolectar(user.steamid);
+		const {detalle,img}= result;
+		res.render ('recolectar'  ,  { 
+			user:  user, 
+			saldo: user.saldo,
+			detalle: detalle,
+			img:img
+		})
+	}
+});
+
 
 
 

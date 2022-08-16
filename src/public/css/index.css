@@ -285,7 +285,12 @@ color:  #A3002E;
    
     font-size: calc(.4rem + .4vw);
 }
- 
+.img-recolectar{
+    height: 60px;
+}
+.cursor{
+    cursor: wait !important;
+}
  
   /*  scrool */
   ::-webkit-scrollbar {
