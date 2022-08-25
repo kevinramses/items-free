@@ -181,10 +181,20 @@
  <script>
    $( document ).ready(function() {
     $(".btn-comprar").click(function () {
-       alert($(this).attr("id"));
+      Swal.fire({
+            icon: "error",
+            title: "Inicia sesión",
+            background: "#503D75",
+
+            showConfirmButton: true,
+            customClass: {
+                title: "text-light"
+            }
+        })
      });
 });
  </script>
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

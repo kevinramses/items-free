@@ -190,6 +190,9 @@ color:  #A3002E;
 .img-market{
     height: 200px;
 }
+.img-market2{
+    height: 300px;
+}
 .img-inventario{
     height: 150px;
 }
@@ -381,6 +384,9 @@ color:  #A3002E;
         font-size: calc(1rem + 1vw);
       }
       .img-market{
+        height: 150px;
+    }
+    .img-market2{
         height: 150px;
     }
     .img-inventario{

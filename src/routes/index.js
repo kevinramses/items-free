@@ -97,7 +97,15 @@ router.get('/recolectar', async (req, res) => {
 	}
 });
 
-
+router.get('/commin', async (req, res) => {
+	var user = req.user ||"";
+		res.render ('commin'  ,  {
+			user:  user,
+			saldo:user.saldo
+		});
+	
+	
+});
 
 
 module.exports = router;
