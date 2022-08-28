@@ -12,14 +12,7 @@ const corsUrl = process.env.CORS
 
 router.get('/', async (req, res) => {
 	var user = req.user ||"";
-	try {
-		await axios.get(corsUrl)
-	.then(response => {
-	  console.log(response.data)
-	})
-	} catch (error) {
-		console.log("no funciona")
-	}
+
 	
 	if (user ==="") {
 		res.render ('index'  ,  {
