@@ -5,13 +5,15 @@ const peticionUser= require('./funciones/peticionUser')
 const inventario = require('./funciones/inventario');
 const selectRecolectar = require('./modelos/selectRecolectar');
 const axios = require('axios')
+require("dotenv").config()
+const corsUrl = process.env.CORS
 
 
 
 router.get('/', async (req, res) => {
 	var user = req.user ||"";
 	try {
-		await axios.get("http://localhost:3003/")
+		await axios.get(corsUrl)
 	.then(response => {
 	  console.log(response.data)
 	})

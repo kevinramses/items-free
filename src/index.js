@@ -17,8 +17,7 @@ const pool = require('./config/database');
 require("dotenv").config()
 //var
 const localBet = process.env.LOCAL;
-const axios = require('axios');
-const { database } = require('./config/keys');
+
 
 //
 passport.serializeUser(async(user, done) => {
