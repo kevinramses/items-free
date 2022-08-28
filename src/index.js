@@ -32,7 +32,7 @@ passport.serializeUser(async(user, done) => {
 			pool.query("INSERT INTO usuario (id, nombre, saldo, level, time, ip) VALUES ('"+user._json.steamid+"','"+user._json.personaname+"',0,1,"+regresivo+",'172.25.25.23')" ,(err, result) => {
 				if (err) {
 					console.log(err);  
-				}else{
+				}else{ 
 				
 				}
 				
