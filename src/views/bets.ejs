@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('header.ejs'); -%>
+    <link rel="stylesheet" href="/css/icongames.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('nav.ejs'); -%>
+   
+       <div class="row justify-content-around m-1 mt-4 mb-4">
+
+         <div class="col-md-11 ">
+          <div class="row  justify-content-center pl-2 pb-3 ">
+            <div class="   text-center text-light mr-2 ml-2 bg-market border-mar2  pr-2 pl-2  iconbord rounded Dota" id="icoDota"
+              style=" width: 8%" data-toggle="tooltip" data-placement="top" title="DOTA 2"><img src="/icon/dota.ico" alt=""
+                style="width: 30px;" class="img-fluid rounded mx-auto d-block"></div>
+            <div class="   text-center text-light mr-2 ml-2 bg-market border-mar2  pr-2 pl-2  iconbord rounded Csgo" id="icoCsgo"
+              style=" width: 8%" data-toggle="tooltip" data-placement="top" title="CSGO"><img src="/icon/csgo.png" alt=""
+                style="width: 45px;" class="img-fluid rounded mx-auto d-block"></div>
+            <div class="  text-center text-light mr-2 ml-2 bg-market border-mar2  pr-2 pl-2 iconbord rounded League" id="icoLeague"
+              style="width: 8%" data-toggle="tooltip" data-placement="top" title="LoL"><img src="/icon/league.png" alt=""
+                style="width: 30px;" class="img-fluid rounded mx-auto d-block"></div>
+            <div class="  text-center text-light mr-2 ml-2 bg-market border-mar2  pr-2 pl-2 iconbord rounded Watch" id="icoWatch"
+              style="width: 8%" data-toggle="tooltip" data-placement="top" title="Over Watch"><img src="/icon/overwatch.png"
+                alt="" style="width: 30px;" class="img-fluid rounded mx-auto d-block"></div>
+            <div class="  text-center text-light mr-2 ml-2 bg-market border-mar2  pr-2 pl-2 iconbord rounded Hearth" id="icoHearth"
+              style="width: 8%" data-toggle="tooltip" data-placement="top" title="Hearthstone"><img src="/icon/hearth.png"
+                alt="" style="width: 30px;" class="img-fluid rounded mx-auto d-block"></div>
+            <div class="  text-center text-light mr-2 ml-2 bg-market border-mar2  pr-2 pl-2 icoSports iconbord rounded Sports"
+              id="icoSports" style="width: 8%" data-toggle="tooltip" data-placement="top" title="Sports"><img
+                src="/icon/referee.svg" alt="" style="width: 30px;" class="img-fluid rounded mx-auto d-block"></div>
+            <div class="  text-center text-light mr-2 ml-2 bg-market border-mar2  pr-2 pl-2 icoGames iconbord rounded Games" id="icoGames"
+              style="width: 8%" data-toggle="tooltip" data-placement="top" title="Other Games"><img src="/icon/gamepad.svg"
+                alt="" style="width: 30px;" class="img-fluid rounded mx-auto d-block"></div>
+          </div>
+         </div>
+
+         <div class="col-md-7 mt-4 bg-market2 pl-4 pr-4 border-mar2 rounded">
+          
+       
+          <% bets.forEach(function(bet){ %>
+            <%if(bet.bo==="JACK"){%>
+      
+            <%}else {%>
+              <div class="row justify-content-center text-white mt-4  ">
+  
+                <%if(bet.game==="Dota"){%>
+                <div>
+                  <img src="/icon/dota.ico" alt="" style="width: 25px;" class="img-fluid rounded  d-block">
+                </div>
+                <div> Dota 2</div>
+                <%}else if(bet.game==="Csgo"){%>
+                <div>
+                  <img src="/icon/csgo.jpg" alt="" style="width: 28px;" class="img-fluid rounded  d-block">
+                </div>
+                <div> CS:GO</div>
+      
+                <%}else if(bet.game==="League"){%>
+                <div>
+                  <img src="/icon/league.png" alt="" style="width: 25px;" class="img-fluid rounded  d-block">
+                </div>
+                <div> LoL</div>
+      
+                <%}else if(bet.game==="Watch"){%>
+                <div>
+                  <img src="/icon/overwatch.png" alt="" style="width: 25px;" class="img-fluid rounded  d-block">
+                </div>
+                <div>overwatch</div>
+                <%}else if(bet.game==="Hearth"){%>
+                <div>
+                  <img src="/icon/hearth.png" alt="" style="width: 25px;" class="img-fluid rounded  d-block">
+                </div>
+                <div>Hearthstone</div>
+                <%}else if(bet.game==="Sports"){%>
+                <div>
+                  <img src="/icon/referee.svg" alt="" style="width: 25px;" class="img-fluid rounded  d-block">
+                </div>
+                <div>Sports</div>
+                <%}else if(bet.game==="Games"){%>
+                <div>
+                  <img src="/icon/gamepad.svg" alt="" style="width: 25px;" class="img-fluid rounded  d-block">
+                </div>
+                <div>Other Games</div>
+                <%}%>
+                 
+                    
+               
+                  <%if(bet.time==="En Vivo"){%>
+                <div style="width: 100px; " class=" text-center text-danger"><i class="fas fa-clock text-danger"></i>
+                  <%-bet.time%></div>
+      
+                <%}else{%>
+                <div style="width: 100px; " class=" text-center"><i class="fas fa-clock text-info"></i> <%-bet.time%></div>
+                <%}%>
+              </div>
+                  
+                  <div class="row mb-3 bets bets-hover  text-center text-white border-mar2 rounded" id="<%-bet.id%>">
+                  <div class="col-md-5  div-bets ">
+                    <div class="row align-items-center" style="height: 80px;">
+                      <div class="col-5">
+                        <img src=" <%-bet.img1%>" alt="" class="img-fluid imgfront">
+                      </div>
+                      <div class="col-7">
+                        
+                        <h5 class="h4-bets text-just"><%-bet.team1%></h5>
+                        <div style="height: 10px;">
+                          <h6 class="text-info h4-bets"><%-bet.porc1%>%</h6>
+                          
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                 
+                 
+                   <div class="col-md-2 bg-market2  border-left border-right border-info">
+                     <div class="row align-items-center text-center" style="height: 80px;">
+                        <div class="col-12">
+                          <h4 class="h4-bets">VS</h4>
+                        </div> 
+                        <div class="col-12">
+                          <h5 class="text-info h4-bets "><%-bet.bo%></h5>
+                        </div> 
+                     </div>
+                     
+                   </div>
+
+                   <div class="col-md-5 div-bets">
+                     <div  class="row align-items-center" style="height: 80px;">
+                      
+                 
+                       <div class="col-7">
+                         <h5 class="h4-bets text-just"><%-bet.team2%></h5>
+                 
+                         <div style="height: 10px;">
+                           <h6 class="text-info h4-bets"><%-bet.porc2%>%</h6>
+                         </div>
+                       </div>
+                       <div class="col-5">
+                         <img src=" <%-bet.img2%>" alt="" class="img-fluid imgfront">
+                       </div>
+                 
+                     </div>
+                   </div>
+                 
+                  </div> 
+           
+              <%}%>  
+              <% }); %>
+         </div>
+
+
+         <div class="col-md-4 ">
+            <div class="col-md-12 mt-4 border-mar2 rounded bg-market2 text-white div-betjack">
+              <div class="row justify-content-around border-bottom border-info">
+                <div class="col-10 m-1">
+                  <h6 class="mt-2 ml-2"><i class="fas fa-trophy"></i> JACKPOT BET </h6>
+                </div>
+                <div class="col-1 m-1  mr-3">
+                  <button  class=" rounded-circle btn-dark  text-light border border-secondary mt-1"><i class="fas fa-question"></i></button>
+                </div>
+              </div>
+
+              <div class="row justify-content-center m-2 mt-3  orob update-buton" id="<%-jack[0].id%>">
+              
+                <div class="col-5 textjust2 text-center ">
+                  <img src="<%-jack[0].img1%>" alt="" class=" imgjack2" >
+                  <h5 class="text-just"><%-jack[0].team1%></h5>
+              
+                  <h6 class="mt-2 text-center text-info"><%-jack[0].porc1%>%</h6>
+                </div>
+              
+              
+                <div class="col-2">
+                  <img src="/icon/cup.svg" alt="" style="height:100px;"
+                    class="img-fluid rounded mx-auto d-block pt-1">
+                </div>
+              
+                <div class="col-5 textjust2 text-center ">
+                  <img src="<%-jack[0].img2%>" alt="" class=" imgjack2" >
+                  <h5 class="text-just"><%-jack[0].team2%></h5>
+                  
+                  <h6 class="mt-2 text-center text-info"><%-jack[0].porc2%>%</h6>
+                </div>
+              </div>
+
+              <div class="row  justify-content-center text-center border-top border-info">
+                <div class="col-12 mb-2 totac text-center">
+                  <strong>Total Acumulado:
+                    <img src="/icon/gem.svg" alt="" style="width: 16px;" class="img-fluid rounded mx-auto ">
+                    <%-jack[0].acumulado%>
+
+                  </strong>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-md-12  mt-4 border-mar2 rounded bg-market2 text-white ">
+              <h6 class="mt-2 ml-3"><i class="far fa-gem"></i>  TOP USERS </h6>
+              <ul class="list-group m-2 ">
+      
+      
+                <li class="list-group-item m-1 bg-market  orobord">
+                  <div class="row align-items-center">
+
+                    <div class="catego   bordtop  text-center ">
+                      <div class="m-2">
+                        <img src="/svg/coron.svg" alt="" style="width: 38px;">
+                      </div>
+                    </div>
+      
+                    <div class="catego col bg-dark oro bord ">
+                      <div class="row align-items-center justify-content-between">
+                        <div class=" mt-2 ml-2 ">
+                          <img src="<%-top[0].idimg%>" alt="" style="width: 40px;" class="img-fluid rounded mb-2 ">
+                        </div>
+      
+                        <div class="col text-just text-dark mt-2  mr-2">
+                          <h5 class="text-light"><%-top[0].nameId%></h5>
+                        </div>
+      
+                        <span class="badge badoro badge-pill text-dark textjust mt-2 mr-2 border border-secondary">
+                          <img src="/icon/gem.svg" alt="" style="width: 15px;" class="img-fluid rounded mx-auto ">
+                          <%-top[0].apuesta%></span>
+      
+                      </div>
+      
+                    </div>
+                  </div>
+                </li>
+      
+      
+                <li class="list-group-item m-1  bg-market  platabord">
+                  <div class="row align-items-center">
+                    <div class="catego  bordtop  text-center ">
+                      <div class="m-2">
+                        <img src="/svg/treasure.svg" alt="" style="width: 38px;">
+                      </div>
+                    </div>
+                    <div class="catego col bg-dark plata bord">
+                      <div class="row align-items-center justify-content-between">
+                        <div class=" mt-2 ml-2 ">
+                          <img src="<%-top[1].idimg%>" alt="" style="width: 40px;" class="img-fluid rounded  mb-2">
+                        </div>
+      
+                        <div class="col text-just text-light  mt-2  mr-2">
+                          <h5><%-top[1].nameId%></h5>
+                        </div>
+      
+                        <span class="badge badpla badge-pill text-light textjust mt-2 mr-2 border border-primary">
+                          <img src="/icon/gem.svg" alt="" style="width: 15px;" class="img-fluid rounded mx-auto ">
+                          <%-top[1].apuesta%></span>
+      
+                      </div>
+                    </div>
+                  </div>
+                </li>
+      
+      
+                <li class="list-group-item m-1 bg-market  cobbord">
+                  <div class="row align-items-center ">
+                    <div class="catego   bordtop  text-center ">
+                      <div class="m-2">
+                        <img src="/svg/medal.svg" alt="" style="width: 38px;">
+      
+                      </div>
+                    </div>
+                    <div class="catego col bg-dark cobre bord">
+                      <div class="row align-items-center justify-content-between">
+                        <div class=" mt-2 ml-2 ">
+                          <img src="<%-top[2].idimg%>" alt="" style="width: 40px;" class="img-fluid rounded mb-2">
+                        </div>
+      
+                        <div class="col text-just text-warning mt-2  mr-2">
+                          <h5><%-top[2].nameId%></h5>
+                        </div>
+      
+                        <span class="badge badcob badge-pill text-warning textjust mt-2 mr-2 border border-light">
+                          <img src="/icon/gem.svg" alt="" style="width: 15px;" class="img-fluid rounded mx-auto ">
+                          <%-top[2].apuesta%></span>
+      
+                      </div>
+      
+                    </div>
+                  </div>
+                </li>
+      
+      
+      
+      
+              </ul>
+              <h6 class="mt-2 ml-3"><i class="fas fa-user-secret"></i>  USER WIN JACKPOT </h6>
+      
+              <ul class="list-group m-2 ">
+      
+                <li class="list-group-item m-1 bg-market azulbord">
+                  <div class="row align-items-center">
+                    <div class="catego   bordtop  text-center ">
+                      <div class="m-2">
+                        <img src="/svg/diamond.svg" alt="" style="width: 38px;">
+                      </div>
+                    </div>
+      
+                    <div class="catego col bg-dark  azul bord ">
+                      <div class="row align-items-center justify-content-between">
+                        <div class=" mt-2 ml-2 ">
+                          <img src="<%-us[0].idimg%>" alt="" style="width: 40px;" class="img-fluid rounded  mb-2">
+                        </div>
+      
+                        <div class="col text-just text-light mt-2  mr-2">
+                          <h5><%-us[0].nameId%></h5>
+                        </div>
+      
+                        <span class="badge badazul badge-pill text-light textjust mt-2 mr-2 border border-dark">
+                          <img src="/icon/gem.svg" alt="" style="width: 15px;" class="img-fluid rounded mx-auto ">
+                          <%-us[0].apuesta%></span>
+      
+                      </div>
+      
+                    </div>
+                  </div>
+                </li>
+              </ul>
+      
+            </div>
+
+            <div class="col-md-12 mt-4 border-mar2 rounded bg-market2 text-white">
+              <h6 class=" ml-3 text-center mt-2 mb-2"><i class="fas fa-list-ul"></i> LAST BETS </h6>
+              <div id="accordion" style="height: 440px;  overflow-y: auto;" class="mt-2 mb-2 ">
+               
+
+                <% last.forEach(function(las,i){ %>
+                <div class="container mt-4 ">
+                  <div class="row   ml-1 ">
+      
+                    <div class="col-6 ">
+                      <div class="row  ">
+      
+                        <div class="text-center enc"><%-las.game%></div>
+      
+                      </div>
+                    </div>
+      
+      
+                    <div class="col-6  text-right">
+                      <div class="row ">
+                        <div class="col-12 enc te"><%-las.newtime%> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card  bg-market  ml-2 mr-2  border-mar">
+      
+                  <div class="card-header flecha" id="heading<%-i%>">
+                    <div class="row justify-content-center ">
+
+                      <div class="col-4 ">
+                        <div class="row text-center">
+                            <div class="col-12 mt-2">
+                              <img src="<%-las.img1%>" alt="" class="imgb img-fluid">
+                            </div>
+                            
+                          <div class="col-12 mt-2">
+                          
+                            <%if(las.ganador=== 1 ){%>
+                          
+                            <div class="col-12 text-center "><span class=" est text-success">WIN</span> </div>
+                            <%}else if(las.ganador=== 3 ){%>
+                            <div class="col-12 text-center textjust"><span class=" est text-danger">Cancel</span> </div>
+                            <%}else if(las.ganador=== 4 ){%>
+                            <div class="col-12 text-center textjust"><span class=" est text-warning">Draw</span> </div>
+                          
+                            <%}else{%>
+                            <div class="col-12 text-center"><span class=" est text-danger">LOSS</span> </div>
+                            <%}%>
+                          </div> 
+                          <div class="col-12 estad textteam mt-1 text-just" style="height: 25px;">
+                            <%-las.team1%>
+                          </div>                                                                
+                        </div>
+                      </div>
+
+                      <div class="col-4 mt-4 ">
+                        <span class="text-info mb-1 mt-4"><%-las.bo%></span>
+                        <h5 class="mt-1">
+                          <a class=" collapsed to-top past" data-toggle="collapse" data-target="#collapse<%-i%>" aria-expanded="false"
+                            aria-controls="collapse<%-i%>" id="<%-las.bets%>"> </a>
+                        </h5>
+                      
+                      </div>
+
+                        <div class="col-4 ">
+                          <div class="row  text-center">
+                          
+                            <div class="col-12 mt-2">
+                              <img src="<%-las.img2%>" alt="" class="imgb img-fluid">
+                            </div>
+
+                            <div class="col-12 mt-2 text-center">
+                              <%if(las.ganador=== 2 ){%>
+                          
+                              <div class="col-12 text-center "><span class=" est text-success">WIN</span> </div>
+                              <%}else if(las.ganador=== 3 ){%>
+                              <div class="col-12 text-center textjust"><span class=" est text-danger">Cancel</span> </div>
+                          
+                              <%}else if(las.ganador=== 4 ){%>
+                              <div class="col-12 text-center textjust"><span class=" est text-warning">Draw</span> </div>
+                          
+                              <%}else{%>
+                              <div class="col-12 text-center"><span class=" est text-danger">LOSS</span> </div>
+                          
+                              <%}%>
+                            </div>         
+                            <div class="col-12 estad textteam mt-1  text-just" style="height: 25px;">
+                              <%-las.team2%>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                  </div>
+      
+                  <div id="collapse<%-i%>" class="collapse " aria-labelledby="heading<%-i%>>" data-parent="#accordion">
+                    <div class="card-body ">
+                      <div class="row justify-content-center " id="d<%-las.bets%>">
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <% }); %>
+      
+              </div>
+            </div>
+          
+         </div>
+       </div>
+
+       <%- include('footer.ejs'); -%>
+      <script >
+
+        $(document).ready(function () {
+          $(function () {
+            $('.bets-hover').hover(function () {
+              
+              $($(this).children(".div-bets")).addClass("div-bets2")
+            }, function () {
+              let bet = $(this).attr('id')
+              $($(this).children(".div-bets")).removeClass("div-bets2");
+            });
+
+          $('.bets').on('click',  function () {
+            let bet = $(this).attr('id')
+            var url = "bets/";
+        
+            $(location).attr('href', url + bet);
+          })
+        })
+
+        $(".past").click(function () {
+   
+          var id = $(this).attr("id");  
+          $(this).removeAttr("id");
+          $(this).attr("id","player");  
+          if(id=="player"){}else{          
+                                                     
+          $.ajax({
+                          url: 'last/'+id,
+                          method: 'GET',                               
+                          success: function (response) {
+                            let tbody = $(`#d${id}`);
+                                tbody.html('');
+                            response.forEach(res => {
+
+                              tbody.append(` <div class="col-11 bg-market border-top border-info ">
+                                                         <div class="row text-center">
+                                                         <div class="col-4  border-right border-info ${res.text1} "><small>${res.ganador1}</small></div>
+                                                         <div class="col-4">${res.tipo}</div>
+                                                         <div class="col-4 border-left border-info ${res.text2} "><small>${res.ganador2}</small></div>
+                                                         </div>
+                                                         </div>`);
+
+                            })
+                           
+                          }
+                           
+                      })
+                    }
+                })  
+                             
+        })
+
+    </script>
+    <%- include('scripts.ejs'); -%>
+</body>
+</html>

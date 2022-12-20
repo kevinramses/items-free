@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src",
+    "start": "nodemon src",
     "dev": "nodemon src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,12 @@
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
+    "node-time-ago": "^1.0.0",
     "passport": "^0.4.1",
-    "passport-steam": "^1.0.15"
+    "passport-steam": "^1.0.15",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

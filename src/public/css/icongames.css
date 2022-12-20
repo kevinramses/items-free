@@ -1,0 +1,52 @@
+.Dota:hover{
+          
+    border-bottom: 1px solid rgba(194 ,53 ,42) ;
+    background-image: linear-gradient(to bottom, rgb(218, 90, 80,0.2),rgba(255, 143, 134,0.1), #343a40, #343a40);
+    cursor: pointer;
+   
+   
+}
+.Csgo:hover{
+            
+    border-bottom: 1px solid rgba(157 ,160 ,163) ;
+    background-image: linear-gradient(to bottom, rgb(126 ,132, 138,0.4),rgba(208, 209, 210,0.1), #343a40, #343a40);
+
+    cursor: pointer;
+   
+    
+}
+.League:hover{
+    border-bottom: 1px solid rgba(222 ,164 ,96) ;
+    background-image: linear-gradient(to bottom, rgb(189 ,128, 57,0.3),rgba(255 ,207 ,149,0.1), #343a40, #343a40);
+
+    cursor: pointer;
+    
+}
+.Watch:hover{
+    border-bottom: 1px solid #7D6632 ;
+    background-image: linear-gradient(to bottom, rgb(99 ,77 ,27,0.4),rgba(159, 135 ,82,0.1), #343a40, #343a40);
+
+    cursor: pointer;
+    
+}
+.Hearth:hover{
+    border-bottom: 1px solid #677DA8;
+    background-image: linear-gradient(to bottom, rgb(68, 93 ,142,0.5),rgba(150 ,167, 201,0.1), #343a40, #343a40);
+
+    cursor: pointer;
+    
+}
+.Sports:hover{
+    border-bottom: 1px solid #E47C6E;
+    background-image: linear-gradient(to bottom, rgb(189 ,79, 65,0.4),rgba(255 ,173, 162,0.1), #343a40, #343a40);
+
+    cursor: pointer;  
+}
+
+.Games:hover{
+   
+    border-bottom: 1px solid #1185E0;
+    background-image: linear-gradient(to bottom, rgb(5, 119, 206,0.3),rgba(58 ,154, 227,0.1), #343a40, #343a40);
+
+    cursor: pointer;  
+}

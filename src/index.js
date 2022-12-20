@@ -12,50 +12,27 @@ const SteamStrategy = require('passport-steam').Strategy;
 const cookieParser = require('cookie-parser');
 //sockets
 const server = require('http').Server(app);
-// database
-const pool = require('./config/database');
+require('./config/socket').connection(server);
+const axios = require('axios');
+
 require("dotenv").config()
 //var
 const localBet = process.env.LOCAL;
+const backend = process.env.BACK;
 
 
 //
 passport.serializeUser(async(user, done) => {
-	
-    try { 
-		const fecha = new Date();
-		const regresivo = fecha.setMinutes(fecha.getMinutes() - 15) ;
-
-		var result = await pool.query("SELECT * FROM usuario WHERE id =" + user._json.steamid + " LIMIT 1 ");
-		if (result=="") {
-			pool.query("INSERT INTO usuario (id, nombre, saldo, level, time, ip) VALUES ('"+user._json.steamid+"','"+user._json.personaname+"',0,1,"+regresivo+",'172.25.25.23')" ,(err, result) => {
-				if (err) {
-					console.log(err);  
-				}else{ 
-				
-				}
-				
-			}) 
-			pool.query("INSERT INTO inventario (`steamid`, `ticket`, `diamantes`, `xp`, `tesoro1`, `tesoro2`, `tesoro3`, `tesoro4`, `tesoro5`, `tesoro6`) VALUES ('"+user._json.steamid+"',0,0,0,0,0,0,0,0,0)" ,(err, result) => {
-				if (err) {
-					console.log(err);  
-				}
-			})
-			user._json.saldo="0" ;
-			user._json.level="1" ;
-		}else{
-			
-			user._json.saldo=result[0].saldo ;
-			user._json.level=result[0].level ;
-		}        
-		//    user._json.nombre=data.nombre;
-		//    user._json.promo=data.promo;
-    } catch (error) {
-		user._json.saldo="0"; 
-		user._json.level="1" ;
+	try {
+		const { data } = await axios.post(backend+'saldo', { id: user._json.steamid, profile: user._json.personaname })
+		user._json.saldo = data.saldo;
+		user._json.nombre = data.nombre;
+		user._json.promo = data.promo;
+	} catch (error) {
 		console.log(error)
-    }
-    
+		user._json.saldo = "5";
+	}
+
 	done(null, user._json);
     
     // console.log(data)
@@ -81,7 +58,7 @@ const sesion =session({
 	, resave: true
 	, saveUninitialized: true
 	, cookie: {
-		maxAge: 864000000
+		maxAge: 8640000000
 	}
 })
 app.use(sesion);

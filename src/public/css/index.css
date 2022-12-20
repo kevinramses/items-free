@@ -50,11 +50,9 @@ color:  #A3002E;
 
     mix-blend-mode: screen;
 }
+
 .border-user{
-    border: 2px solid #25193D !important;
-}
-.border-user{
-    border: 2px solid #765caa !important;
+    border: 2px solid #0E6994!important;
 }
 
 .div-1{
@@ -176,7 +174,7 @@ color:  #A3002E;
         height: 400px;
     }
    .img-logo{
-       height: 38px;
+       height: 40px;
    }
    .img-logo-footer{
     height: 25px;
@@ -205,8 +203,16 @@ color:  #A3002E;
     background: rgba(15 ,10 ,42, 0.9);
    
 }
+
+
 .border-mar2{
     border: 2px solid rgba(57, 45, 126, 0.9);
+}
+.border-bets{
+    border-top: 2px solid rgba(57, 45, 126, 0.9);
+    border-left: 2px solid rgba(57, 45, 126, 0.9);
+    border-right: 2px solid rgba(57, 45, 126, 0.9);
+    border-bottom: 2px solid #189BB2;
 }
 .border-tab{
     border-bottom: 2px solid rgba(57, 45, 126, 0.9);
@@ -330,9 +336,119 @@ color:  #A3002E;
   ::-webkit-scrollbar-corner {
     background: transparent;
   }
+  .imgfront{
+    width: 80px; 
+    height: 60px;
+    background-size: 100% 100%;
+    margin: 0.5em;
 
-  
-  
+}
+.div-bets{
+    background: rgba(50, 37, 80, 0.7);
+}
+.div-bets2{
+    background: rgba(73, 53, 119, 0.7);
+   
+}
+.text-just{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.imgjack2{
+    width: 70px; 
+    height: 60px;
+    background-size: 100% 100%;
+}
+.imgb{
+    width: 60px; 
+    height: 50px;
+    background-size: 100% 100%;
+}
+.div-betjack:hover{
+    background: rgba(18, 13, 56, 0.9);
+    cursor: pointer;
+}
+/* //USER BETS  */
+.oro{
+    background: rgb(198,148,0);
+    background: linear-gradient(90deg, rgba(198,148,0,0.5) 0%, rgba(255,205,57,0.6) 48%, rgba(255,216,100,0.7) 100%);
+}
+    .orobord{
+        border-bottom: 1px solid rgba(  1255, 191 ,0,0.6) ;
+   
+} 
+.plata{
+    background: rgb(96,106,116);
+    background: linear-gradient(90deg, rgba(96,106,116,0.5) 0%, rgba(126,132,138,0.6) 48%, rgba(208,209,210,0.7) 100%);
+
+}
+.platabord{
+    border-bottom: 1px solid rgba( 157 ,160, 163,0.7) ;
+
+}
+.platabordt{
+  border-top: 1px solid rgba( 157 ,160, 163,0.7) ;
+}
+.cobre{
+    background: rgb(85, 0, 0);
+    background: linear-gradient(90deg, rgba(128, 21, 21,0.3) 0%, rgba(212, 106, 106,0.3) 48%, rgba(255, 170, 170,0.3) 100%);
+}
+.cobbord{
+    border-bottom: 1px solid rgba(128, 21, 21,1) ;
+}
+.azul{
+    background: rgb(42,141,189);
+    background: linear-gradient(90deg, rgba(42,141,189,0.4) 0%, rgba(75,161,203,0.5) 48%, rgba(117,186,220,0.6) 100%);
+}
+
+.azulbord{
+    border-bottom: 1px solid #2A8DBD ;
+}
+.flecha{
+    text-align:center;
+    font-size:100%;
+    
+    font-family: Calibri, arial, sans-serif;
+  }
+ .to-top{
+        color:white;
+        margin-top: .5rem;
+        padding-top:1em;
+        display:inline-block;/* or block */
+        position:relative;
+        border-color:white;
+        text-decoration:none;
+        transition:all .3s ease-out;
+        
+    }
+    .to-top:before{
+       
+        content:'▼';
+        font-size:1em;
+        position:absolute;
+        top:0;
+        left:50%;
+        margin-left:-.6em;
+        border:solid .13em white;
+        border-radius:10em;
+        width:1.4em;
+        height:1.4em;
+        line-height:1.3em;
+        border-color:inherit;
+        transition:transform .4s ease-in;
+    }
+    .to-top:hover{
+        color:#2A8DBD;
+        border-color:#5A869D;
+        cursor: pointer;
+    }
+    .to-top:hover:before{
+        transform: rotate(180deg);
+    }
+    .bets{
+        cursor: pointer;
+    }
 
     /* //RESPONSE  */
     @media only screen and (max-width: 540px) {
@@ -350,6 +466,9 @@ color:  #A3002E;
             height: 220px;
           }
         .h4-inventario{
+            font-size: calc(1rem + 1vw);
+        }
+        .h4-bets{
             font-size: calc(1rem + 1vw);
         }
         .nav-link2{
